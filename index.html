@@ -9,51 +9,17 @@
 
   <body>
     <h3>Samer ReactJS Course</h3>
-    <div id="example"></div>
+    <div id="root"></div>
     <script type="text/jsx">
-      React.render(
-        <p>This is rendered text.</p>,
-        document.getElementById('example'))
-        
-      var GeneratedText = React.createClass({
-        render: function() {
+      var Button = React.createClass({
+        render: function(){
           return (
-            <p className="secondary">
-              Component-rendered text
-            </p>
-          );
-        }
-      });
-
-      React.render(
-        <GeneratedText />,
-        document.getElementById('example-2')
-      )
-      
-      var ContentText = React.createClass({
-        render: function() {
-          return (
-            <span>
-              Composed components rendered
-            </span>
-          );
+            <button>Go</button>
+          )
         }
       });
       
-      var SecondaryContent = React.createClass({
-        render: function() {
-          return (
-            <p className="secondary">
-            <ContentText />
-            </p>
-          );
-        }
-      })
-      
-      React.render(
-        <SecondaryContent />,
-        document.getElementById('example-3')
-      );
+      React.render(<Button/>, document.getElementById('root'));
     </script>
   </body>
 
