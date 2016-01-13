@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>React Tutorial</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-beta1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-beta1/JSXTransformer.js"></script>
+  </head>
+
+  <body>
+    <h3>Step 1</h3>
+    <div id="example"></div>
+    <div id="example-2"></div>
+    <div id="example-3"></div>
+    <script type="text/jsx">
+      React.render(
+        <p>This is rendered text.</p>,
+        document.getElementById('example'))
+        
+      var GeneratedText = React.createClass({
+        render: function() {
+          return (
+            <p className="secondary">
+              Component-rendered text
+            </p>
+          );
+        }
+      });
+
+      React.render(
+        <GeneratedText />,
+        document.getElementById('example-2')
+      )
+      
+      var ContentText = React.createClass({
+        render: function() {
+          return (
+            <span>
+              Composed components rendered
+            </span>
+          );
+        }
+      });
+      
+      var SecondaryContent = React.createClass({
+        render: function() {
+          return (
+            <p className="secondary">
+            <ContentText />
+            </p>
+          );
+        }
+      })
+      
+      React.render(
+        <SecondaryContent />,
+        document.getElementById('example-3')
+      );
+    </script>
+  </body>
+
+</html>
