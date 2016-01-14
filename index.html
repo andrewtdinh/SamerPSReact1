@@ -35,8 +35,16 @@
         }
       });
       
+      var Main = React.createClass({
+        render: function(){
+          return (
+            <Button />
+            <Result />
+          )
+        }
+      });
       
-      React.render(<Button/>, document.getElementById('root'));
+      React.render(<Main />, document.getElementById('root'));
     </script>
   </body>
 
