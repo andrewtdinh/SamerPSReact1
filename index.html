@@ -23,7 +23,7 @@
         render: function(){
           return (
             <div>
-              {this.state.counter}
+              {this.props.localCounter}
             </div>
           )
         }
@@ -40,7 +40,7 @@
           return (
             <div>
               <Button localHandleClick={this.handleClick}/>
-              <Result />
+              <Result localCounter={this.state.counter}/>
             </div>
           )
         }
