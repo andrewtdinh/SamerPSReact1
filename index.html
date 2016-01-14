@@ -29,7 +29,7 @@
         render: function(){
           return (
             <div>
-              XXX
+              {this.state.counter}
             </div>
           )
         }
@@ -39,7 +39,7 @@
         render: function(){
           return (
             <div>
-              <Button />
+              <Button localHandleClick={this.handleClick}/>
               <Result />
             </div>
           )
