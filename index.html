@@ -12,15 +12,9 @@
     <div id="root"></div>
     <script type="text/jsx">
       var Button = React.createClass({
-        getInitialState: function(){
-          return {counter: 0}
-        },
-        handleClick: function(){
-          this.setState({counter: this.state.counter + 1})
-        },
         render: function(){
           return (
-            <button onClick={this.handleClick}>+1</button>
+            <button onClick={this.props.localHandleClick}>+1</button>
           )
         }
       });
@@ -36,6 +30,12 @@
       });
       
       var Main = React.createClass({
+        getInitialState: function(){
+          return {counter: 0}
+        },
+        handleClick: function(){
+          this.setState({counter: this.state.counter + 1})
+        },
         render: function(){
           return (
             <div>
