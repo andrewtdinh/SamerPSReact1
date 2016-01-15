@@ -32,10 +32,22 @@
           )
         }
       });
+      
+      var Form = React.createClass({
+        render: function(){
+          return (
+            <form>
+              <input placeholder="github login" />
+              <button>Add</button>
+            </form>
+          )
+        }
+      });
+      
       var Main = React.createClass({
         getInitialState: function(){
           return {
-            logins: ['zpao', 'fisherwebdev']
+            logins: []
           }
         },
         render: function(){
@@ -46,6 +58,7 @@
           });
           return (
             <div>
+              <Form />
               {cards}
             </div>
           )
