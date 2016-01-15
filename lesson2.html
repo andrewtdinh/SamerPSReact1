@@ -18,7 +18,7 @@
         },
         componentDidMount: function(){
           var component = this;
-          $.get("https://api.github.com/users/" + {this.props.login}, function(data){
+          $.get("https://api.github.com/users/" + this.props.login, function(data){
             component.setState(data)
           })
         },
