@@ -16,11 +16,17 @@
         getInitialState: function(){
           return {};
         },
+        componentDidMount: function(){
+          var component = this;
+          $.get("https://api.github.com/users/petehunt", function(data){
+            component.setState(data)
+          })
+        },
         render: function(){
           return (
             <div>
               <img src='' width='80'/>
-              <h3>Name Here</h3>
+              <h3>{this.state.name}</h3>
               <hr/>
             </div>
           )
