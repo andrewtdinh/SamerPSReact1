@@ -12,10 +12,13 @@
     <div id="root"></div>
     <script type="text/jsx">
       var Card = React.createClass({
+        getInitialState: function(){
+          return {};
+        },
         render: function(){
           return (
             <div>
-              <img src='' />
+              <img src='' width='80'/>
               <h3>Name Here</h3>
               <hr/>
             </div>
@@ -26,7 +29,7 @@
         render: function(){
           return (
             <div>
-              <Card />
+              <Card login='petehunt'/>
             </div>
           )
         }
