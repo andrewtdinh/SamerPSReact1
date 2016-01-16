@@ -3,18 +3,31 @@
 
   <head>
     <title>React Tutorial</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel='stylesheet' href='style.css'>
+
   </head>
 
   <body>
     <h3>Samer ReactJS Course - 3rd lesson</h3>
-    <div id="root"></div>
+    <div id="container" class='container'></div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"/>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-beta1/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-beta1/JSXTransformer.js"></script>
-    <script src='script.jsx'
+    <script src="https://fb.me/react-0.13.3.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+
+    <script>
+      var H3 = React.createClass({
+        render: function(){
+          return(
+            <h3>
+              Welcome to React!
+            </h3>
+          )
+        }
+      });
+      React.render(<H3 />, document.getElementById('container'));
+    </script>
   </body>
 
 </html>
