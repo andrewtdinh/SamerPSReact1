@@ -13,11 +13,21 @@
     <div id="container" class="container"></div>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script type="text/jsx">
+      var StarFrame = React.createClass({
+        render: function(){
+          return (
+            <div>
+              ...
+            </div>
+          );
+        }
+      });
       var Game = React.createClass({
         render: function(){
           return (
             <div id="game">
               <h2>Play Nine</h2>
+              <StarFrame/>
             </div>
           );
         }
