@@ -3,3 +3,14 @@
   font-size: 1.75em;
   background-color: red;
 }
+
+#stars-frame, #answer-frame {
+  width: 20%;
+  float: left;
+}
+
+#button-frame {
+  width: 10%;
+  float: left;
+  text-align: center;
+}
