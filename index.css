@@ -14,3 +14,7 @@
   float: left;
   text-align: center;
 }
+
+#stars-frame .well, #answer-frame .well {
+  height: 150px;
+}

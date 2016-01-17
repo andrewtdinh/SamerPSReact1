@@ -31,7 +31,7 @@
         render: function(){
           return (
             <div id="button-frame">
-              <button className="btn btn-primary">=</button>
+              <button className="btn btn-primary btn-lg">=</button>
             </div>
           );
         }
@@ -52,9 +52,12 @@
           return (
             <div id="game">
               <h2>Play Nine</h2>
-              <StarFrame/>
-              <ButtonFrame/>
-              <AnswerFrame/>
+              <hr />
+              <div className='clearfix'>
+                <StarFrame/>
+                <ButtonFrame/>
+                <AnswerFrame/>
+              </div>
             </div>
           );
         }
