@@ -3,30 +3,64 @@
 
   <head>
     <title>React Tutorial</title>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-beta1/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-beta1/JSXTransformer.js"></script>
   </head>
 
   <body>
     <h3>Samer ReactJS Course - 3rd lesson</h3>
-    <div id="container" class='container'></div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"/>
-
-    <script src="https://fb.me/react-0.13.3.js"></script>
-    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
-
-    <script>
-      var H3 = React.createClass({
+    <div id="container" class="container"></div>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="text/jsx">
+      var StarFrame = React.createClass({
         render: function(){
-          return(
-            <h3>
-              Welcome to React!
-            </h3>
-          )
+          return (
+            <div id="stars-frame">
+              <div className="well">
+                <span className="fa fa-star"></span>
+                <span className="fa fa-star"></span>
+                <span className="fa fa-star"></span>
+              </div>
+            </div>
+          );
         }
       });
-      React.render(<H3 />, document.getElementById('container'));
+      var ButtonFrame = React.createClass({
+        render: function(){
+          return (
+            <div id="button-frame">
+              <button className="btn btn-primary">=</button>
+            </div>
+          );
+        }
+      });
+      var AnswerFrame = React.createClass({
+        render: function(){
+          return (
+            <div id="answer-frame">
+              <div className="well">
+                ...
+              </div>
+            </div>
+          );
+        }
+      });
+      var Game = React.createClass({
+        render: function(){
+          return (
+            <div id="game">
+              <h2>Play Nine</h2>
+              <StarFrame/>
+              <ButtonFrame/>
+              <AnswerFrame/>
+            </div>
+          );
+        }
+      });
+
+      React.render(<Game />, document.getElementById('container'));
     </script>
   </body>
 
