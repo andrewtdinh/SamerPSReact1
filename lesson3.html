@@ -52,6 +52,17 @@
           );
         }
       });
+      var NumbersFrame = React.createClass({
+        render: function(){
+          return (
+            <div id="numbers-frame">
+              <div className="well">
+                ...
+              </div>
+            </div>
+          );
+        }
+      });
       var Game = React.createClass({
         render: function(){
           return (
@@ -63,6 +74,7 @@
                 <ButtonFrame/>
                 <AnswerFrame/>
               </div>
+              <NumbersFrame/>
             </div>
           );
         }
