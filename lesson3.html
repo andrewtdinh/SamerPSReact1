@@ -54,10 +54,11 @@
       });
       var NumbersFrame = React.createClass({
         render: function(){
-          var numbers = [];
+          var numbers = [], className, selectedNumbers={this.props.selectedNumbers};
           for(var i=1; i<=9; i++){
+            className = "number select-" + (selectedNumbers.indexOf(i));
             numbers.push(
-              <div className="number">{i}</div>
+              <div className={selectedNumbers}>{i}</div>
             )
           }
           return (
@@ -85,7 +86,7 @@
                 <ButtonFrame/>
                 <AnswerFrame selectedNumbers={this.state.selectedNumbers}/>
               </div>
-              <NumbersFrame/>
+              <NumbersFrame selectedNumbers={this.state.selectedNumbers}/>
             </div>
           );
         }
