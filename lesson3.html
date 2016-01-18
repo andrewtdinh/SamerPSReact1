@@ -54,11 +54,11 @@
       });
       var NumbersFrame = React.createClass({
         render: function(){
-          var numbers = [], className, selectedNumbers={this.props.selectedNumbers};
+          var numbers = [], className, selectedNumbers=this.props.selectedNumbers;
           for(var i=1; i<=9; i++){
-            className = "number select-" + (selectedNumbers.indexOf(i));
+            className = "number selected-" + (selectedNumbers.indexOf(i) >= 0);
             numbers.push(
-              <div className={selectedNumbers}>{i}</div>
+              <div className={className}>{i}</div>
             )
           }
           return (
