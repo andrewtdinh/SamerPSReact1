@@ -16,9 +16,8 @@
     <script type="text/jsx">
       var StarFrame = React.createClass({
         render: function(){
-          var numberOfStars = Math.floor(Math.random()*9) + 1;
           var stars = [];
-          for (var i=0; i<numberOfStars; i++){
+          for (var i=0; i<this.props.numberOfStars; i++){
             stars.push(
               <span className="fa fa-star"></span>
             )
@@ -75,6 +74,7 @@
       var Game = React.createClass({
         getInitialState: function(){
           return {
+            numberOfStars: Math.floor(Math.random()*9) + 1,
             selectedNumbers: []
           };
         },
@@ -91,7 +91,7 @@
               <h2>Play Nine</h2>
               <hr />
               <div className='clearfix'>
-                <StarFrame/>
+                <StarFrame numberOfStars={this.state.numberOfStars}/>
                 <ButtonFrame/>
                 <AnswerFrame selectedNumbers={this.state.selectedNumbers}/>
               </div>
