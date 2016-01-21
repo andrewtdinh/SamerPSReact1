@@ -32,10 +32,12 @@
         }
       });
       var ButtonFrame = React.createClass({
+        var disabled;
+        disabled = (this.props.selectedNumbers.length === 0);
         render: function(){
           return (
             <div id="button-frame">
-              <button className="btn btn-primary btn-lg">=</button>
+              <button className="btn btn-primary btn-lg" disabled={disabled}>=</button>
             </div>
           );
         }
@@ -100,17 +102,19 @@
           this.setState({selectedNumbers: selectedNumbers});
         },
         render: function(){
+          var selectedNumbers = this.state.selectedNumbers,
+              numberOfStars = this.state.numberOfStars;
           return (
             <div id="game">
               <h2>Play Nine</h2>
               <hr />
               <div className='clearfix'>
-                <StarFrame numberOfStars={this.state.numberOfStars}/>
-                <ButtonFrame/>
-                <AnswerFrame selectedNumbers={this.state.selectedNumbers}
+                <StarFrame numberOfStars={numberOfStars}/>
+                <ButtonFrame selectedNumbers={selectedNumbers}/>
+                <AnswerFrame selectedNumbers={selectedNumbers}
                              unselectNumber={this.unselectNumber}/>
               </div>
-              <NumbersFrame selectedNumbers={this.state.selectedNumbers} selectNumber={this.selectNumber}/>
+              <NumbersFrame selectedNumbers={selectedNumbers} selectNumber={this.selectNumber}/>
             </div>
           );
         }
