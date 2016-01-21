@@ -45,7 +45,9 @@
           var props = this.props;
           var selectedNumbers = props.selectedNumbers.map(function(i){
             return (
-              <span>{i}</span>
+              <span onClick={props.unselectNumber.bind(null, i)}>
+                {i}
+              </span>
             )
           });
           return (
