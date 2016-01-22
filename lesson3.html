@@ -89,9 +89,11 @@
         render: function(){
           var numbers = [], className,
             selectNumber = this.props.selectNumber,
-            selectedNumbers=this.props.selectedNumbers;
+            selectedNumbers=this.props.selectedNumbers,
+            usedNumbers = this.props.usedNumbers;
           for(var i=1; i<=9; i++){
             className = "number selected-" + (selectedNumbers.indexOf(i) >= 0);
+            className += "used-" + (usedNumbers.indexOf(i) >= 0);
             numbers.push(
               <div className={className} onClick={selectNumber.bind(null, i)}>{i}</div>
             )
@@ -143,6 +145,7 @@
         },
         render: function(){
           var selectedNumbers = this.state.selectedNumbers,
+              usedNumbers = this.state.usedNumbers,
               numberOfStars = this.state.numberOfStars,
               correct = this.state.correct
           return (
@@ -157,7 +160,9 @@
                 <AnswerFrame selectedNumbers={selectedNumbers}
                              unselectNumber={this.unselectNumber}/>
               </div>
-              <NumbersFrame selectedNumbers={selectedNumbers} selectNumber={this.selectNumber}/>
+              <NumbersFrame selectedNumbers={selectedNumbers}
+                            selectNumber={this.selectNumber}
+                            usedNumbers={usedNumbers}/>
             </div>
           );
         }
