@@ -110,6 +110,7 @@
           return {
             numberOfStars: Math.floor(Math.random()*9) + 1,
             selectedNumbers: [],
+            usedNumbers: [],
             correct: null
           };
         },
@@ -136,6 +137,9 @@
         checkAnswer: function(){
           var correct = (this.state.numberOfStars === this.sumOfSelectedNumbers());
           this.setState({correct: correct})
+        },
+        acceptAnswer: function(){
+
         },
         render: function(){
           var selectedNumbers = this.state.selectedNumbers,
