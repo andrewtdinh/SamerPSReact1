@@ -188,7 +188,15 @@
               numberOfStars = this.state.numberOfStars,
               redraws = this.state.redraws,
               correct = this.state.correct,
-              doneStatus = this.state.doneStatus
+              doneStatus = this.state.doneStatus,
+              bottomFrame;
+          if(doneStatus){
+            bottomFrame = <DoneFrame doneStatus={doneStatus}/>
+          } else {
+            <NumbersFrame selectedNumbers={selectedNumbers}
+                          selectNumber={this.selectNumber}
+                          usedNumbers={usedNumbers}/>
+          }
           return (
             <div id="game">
               <h2>Play Nine</h2>
@@ -204,10 +212,8 @@
                 <AnswerFrame selectedNumbers={selectedNumbers}
                              unselectNumber={this.unselectNumber}/>
               </div>
-              <NumbersFrame selectedNumbers={selectedNumbers}
-                            selectNumber={this.selectNumber}
-                            usedNumbers={usedNumbers}/>
-              <DoneFrame doneStatus={doneStatus}/>
+              {bottomFrame}
+
             </div>
           );
         }
