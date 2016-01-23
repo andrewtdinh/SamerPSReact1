@@ -118,7 +118,8 @@
       var DoneFrame = React.createClass({
         render: function(){
           return (
-            <div className="well text-center">
+            <div  id="done-frame"
+                  className="well text-center">
               <h2>...</h2>
             </div>
           );
@@ -205,6 +206,7 @@
               <NumbersFrame selectedNumbers={selectedNumbers}
                             selectNumber={this.selectNumber}
                             usedNumbers={usedNumbers}/>
+              <DoneFrame />
             </div>
           );
         }
