@@ -37,7 +37,8 @@
           switch(correct){
             case true:
               button = (
-                <button className="btn btn-success btn-lg">
+                <button className="btn btn-success btn-lg"
+                        onClick={this.props.acceptAnswer}>
                   <span className='glyphicon glyphicon-ok'></span>
                 </button>
               );
@@ -162,7 +163,8 @@
                 <StarFrame numberOfStars={numberOfStars}/>
                 <ButtonFrame selectedNumbers={selectedNumbers}
                              correct= {correct}
-                             checkAnswer= {this.checkAnswer}/>
+                             checkAnswer= {this.checkAnswer}
+                             acceptAnswer={this.acceptAnswer}/>
                 <AnswerFrame selectedNumbers={selectedNumbers}
                              unselectNumber={this.unselectNumber}/>
               </div>
