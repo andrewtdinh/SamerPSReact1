@@ -64,7 +64,8 @@
             <div id="button-frame">
               {button}
               <br /><br />
-              <button className="btn btn-warning btn-xs" onClick={this.props.redraw}>
+              <button className="btn btn-warning btn-xs" onClick={this.props.redraw}
+                      disabled={this.props.redraws === 0}>
                 <span className="glyphicon glyphicon-refresh"></span>
                 &nbsp;
                 {this.props.redraws}
@@ -158,12 +159,14 @@
           })
         },
         redraw: function(){
-          this.setState({
-            numberOfStars: Math.floor(Math.random()*9) + 1,
-            correct: null,
-            selectedNumbers: [],
-            redraws: this.state.redraws - 1
-          });
+          if (this.state.redraws > 0){
+            this.setState({
+              numberOfStars: Math.floor(Math.random()*9) + 1,
+              correct: null,
+              selectedNumbers: [],
+              redraws: this.state.redraws - 1
+            });
+          }
         },
         render: function(){
           var selectedNumbers = this.state.selectedNumbers,
