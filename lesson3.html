@@ -66,6 +66,8 @@
               <br /><br />
               <button className="btn btn-warning btn-xs" onClick={this.props.redraw}>
                 <span className="glyphicon glyphicon-refresh"></span>
+                &nbsp;
+                {this.props.redraws}
               </button>
             </div>
           );
@@ -118,6 +120,7 @@
             numberOfStars: Math.floor(Math.random()*9) + 1,
             selectedNumbers: [],
             usedNumbers: [],
+            redraws: 5,
             correct: null
           };
         },
@@ -165,6 +168,7 @@
           var selectedNumbers = this.state.selectedNumbers,
               usedNumbers = this.state.usedNumbers,
               numberOfStars = this.state.numberOfStars,
+              redraws = this.state.redraws,
               correct = this.state.correct
           return (
             <div id="game">
@@ -176,7 +180,8 @@
                              correct= {correct}
                              checkAnswer= {this.checkAnswer}
                              acceptAnswer={this.acceptAnswer}
-                             redraw={this.redraw}/>
+                             redraw={this.redraw}
+                             redraws={redraws}/>
                 <AnswerFrame selectedNumbers={selectedNumbers}
                              unselectNumber={this.unselectNumber}/>
               </div>
