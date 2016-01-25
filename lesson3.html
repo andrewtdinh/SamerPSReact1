@@ -226,6 +226,9 @@
         randomNumber: function(){
           return Math.floor(Math.random()*9) + 1
         },
+        resetGame: function(){
+          this.resetState(this.getInitialState());
+        },
         render: function(){
           var selectedNumbers = this.state.selectedNumbers,
               usedNumbers = this.state.usedNumbers,
