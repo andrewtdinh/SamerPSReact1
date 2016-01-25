@@ -141,7 +141,7 @@
             this.setState({doneStatus: 'You win!!'})
             return;
           }
-          if (!this.possibleSolutions()){
+          if (this.state.redraws === 0  && !this.possibleSolutions()){
             this.setState({doneStatus: 'Gamer over!!'})
             return;
           }
