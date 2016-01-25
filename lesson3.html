@@ -163,6 +163,7 @@
               possibleNumbers.push(i);
             }
           }
+          return possibleCombinationSum(possibleNumbers, numberOfStars);
         },
         updateDoneStatus: function(){
           if (this.state.usedNumbers.length === 9){
