@@ -136,6 +136,16 @@
             doneStatus: null
           };
         },
+        updateDoneStatus: function(){
+          if (this.state.usedNumbers.length === 9){
+            this.setState({doneStatus: 'You win!!'})
+            return;
+          }
+          if (!this.possibleSolutions()){
+            this.setState({doneStatus: 'Gamer over!!'})
+            return;
+          }
+        },
         selectNumber : function(clickedNumber){
           if (this.state.selectedNumbers.indexOf(clickedNumber) < 0){
             this.setState(
