@@ -205,7 +205,9 @@
             usedNumbers: usedNumbers,
             correct: null,
             numberOfStars: this.randomNumber()
-          })
+          }, function(){
+            this.updateDoneStatus();
+          });
         },
         redraw: function(){
           if (this.state.redraws > 0){
@@ -214,6 +216,8 @@
               correct: null,
               selectedNumbers: [],
               redraws: this.state.redraws - 1
+            }, function(){
+              this.updateDoneStatus();
             });
           }
         },
